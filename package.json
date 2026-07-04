@@ -1,0 +1,23 @@
+{
+  "name": "uni-tab-group",
+  "version": "1.0.0",
+  "description": "<uni-tab-group /> is a tab component designed to instantly apply uniopen's design elements to any child element assigned with [slot=tab], enabling rapid integration across multiple pages.",
+  "keywords": [
+    "web"
+  ],
+  "homepage": "https://github.com/meistudioli/uni-tab-group#readme",
+  "bugs": {
+    "url": "https://github.com/meistudioli/uni-tab-group/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meistudioli/uni-tab-group.git"
+  },
+  "license": "MIT",
+  "author": "Paul Li",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

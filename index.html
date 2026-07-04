@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Web Component: &lt;uni-tab-group /> - a web component based on uniopen design language</title>
+<meta name="description" content="uni-tab-group is a tab component designed to instantly apply uniopen's design elements to any child element assigned with [slot=tab], enabling rapid integration across multiple pages." />
+<script type="module" src="mjs/wc-uni-tab-group.js"></script>
+<link rel="stylesheet" href="https://blog.lalacube.com/mei/css/wc-base.css">
+<link rel="stylesheet" href="https://blog.lalacube.com/mei/css/layers/radio-set.css">
+<link rel="stylesheet" href="https://blog.lalacube.com/mei/css/layers/defaults.css">
+<style>
+#hd,#ft{display:none;}
+body{position:relative;inline-size:100vw;block-size:100vh;margin:0;}
+
+.wrap {
+  inline-size: 100%;
+  max-inline-size: min(800px, calc(100% - 2em));
+  box-sizing: border-box;
+}
+
+.demo-wrap {
+  position: relative;
+  inline-size: min(100%, 800px);
+  block-size: 200px;
+  background-color: rgba(224 224 224);
+  padding-inline: 2em;
+  margin: 6em auto 1em;
+  box-sizing: border-box;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+
+  &+.setting-form {
+    --subject-inline-size: auto;
+    margin-block-start: 1em;
+  }
+
+  .tab-group {
+    inline-size: 100%;
+
+    uni-tab-group {
+      background-color: rgba(206 206 206);
+      border-radius: 12px;
+    }
+  }
+}
+</style>
+</head>
+
+<body class="flex-center">
+<div class="wrap">
+  <div class="demo-wrap">
+    <div class="tab-group">
+      <uni-tab-group>
+        <a href="#tab1" slot="tab" data-active>tab 1</a>
+        <a href="#tab2" slot="tab">tab 2</a>
+        <a href="#tab3" slot="tab">tab 3</a>
+        <a href="#tab4" slot="tab">tab 4</a>
+        <a href="#tab5" slot="tab">tab 5</a>
+      </uni-tab-group>
+    </div>
+  </div>
+
+  <form class="setting-form">
+    <ul class="adjustments">
+      <li class="adjustments__row">
+        <p class="adjustments__row__subject">size：</p>
+        <div class="adjustments__row__content">
+          <div class="il-pair a11y-block-link">
+            <div class="radio-set">
+              <input id="size-0" type="radio" name="size" value="large" />
+              <label class="radio-set__label" for="size-0"></label>
+            </div>
+
+            <label for="size-0">
+              large
+            </label>
+          </div>
+
+          <div class="il-pair a11y-block-link">
+            <div class="radio-set">
+              <input id="size-1" type="radio" name="size" value="medium" checked />
+              <label class="radio-set__label" for="size-1"></label>
+            </div>
+
+            <label for="size-1">
+              medium
+            </label>
+          </div>
+
+          <div class="il-pair a11y-block-link">
+            <div class="radio-set">
+              <input id="size-2" type="radio" name="size" value="small" />
+              <label class="radio-set__label" for="size-2"></label>
+            </div>
+
+            <label for="size-2">
+              small
+            </label>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<script type="module">
+await customElements.whenDefined('uni-tab-group');
+
+const uniTabGroup = document.querySelector('.demo-wrap uni-tab-group');
+const form = document.querySelector('.setting-form');
+
+const handler = (evt) => {
+  const { target } = evt;
+  const formData = new FormData(form);
+  const fd = Object.fromEntries(formData.entries());
+
+  switch (target.name) {
+    case 'size': {
+      uniTabGroup.size = fd['size'];
+      break;
+    }
+  }
+};
+
+form.addEventListener('input', handler);
+</script>
+
+</body>
+
+</html>
