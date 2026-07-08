@@ -1,6 +1,6 @@
 # uni-tab-group
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/uni-button-field) [![DeepScan grade](https://deepscan.io/api/teams/16372/projects/32031/branches/1040420/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16372&pid=32031&bid=1040420)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/uni-tab-group) [![DeepScan grade](https://deepscan.io/api/teams/16372/projects/32031/branches/1040420/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16372&pid=32031&bid=1040420)
 
 &lt;uni-tab-group /> is a tab component designed to instantly apply uniopen's design elements to any child element assigned with [slot=tab], enabling rapid integration across multiple pages.
 

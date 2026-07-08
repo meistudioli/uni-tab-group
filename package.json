@@ -1,6 +1,6 @@
 {
   "name": "uni-tab-group",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "<uni-tab-group /> is a tab component designed to instantly apply uniopen's design elements to any child element assigned with [slot=tab], enabling rapid integration across multiple pages.",
   "keywords": [
     "web"
